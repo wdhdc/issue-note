@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Issue Notes - 开始</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231a3554'/%3E%3Cpath d='M18 15h28a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V19a4 4 0 0 1 4-4Z' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M23 27h18M23 36h18M23 45h11' stroke='%2397d4b0' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root { color-scheme: light; --ink:#1d2b3a; --muted:#64748b; --line:#dce4ec; --paper:#fff; --canvas:#edf2f6; --navy:#18324f; --green:#23834f; --green-dark:#17683d; --green-pale:#e3f4ec; --red:#9c343d; --red-pale:#fbe9eb; --focus:#3978b8; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif; color:var(--ink); background:var(--canvas); }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%}
+  body{min-height:100vh;display:flex;flex-direction:column;font-size:14px}
+  button,input{font:inherit}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .app-header{padding:14px 20px;background:var(--navy);color:#f7fbff;border-bottom:3px solid #85c89c}
+  .app-header .brand{display:flex;align-items:center;gap:10px}
+  .app-header h1{margin:0;font-size:16px}
+  main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:32px 20px 60px}
+  .card{width:100%;max-width:760px;padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(20,40,60,.06)}
+  h2{margin:0 0 8px;font-size:24px}
+  .lead{margin:0 0 24px;color:var(--muted);line-height:1.7;font-size:15px}
+  .features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:0 0 28px;padding:0;list-style:none}
+  .feature{padding:14px 16px;background:#f6f9fc;border:1px solid var(--line);border-radius:10px}
+  .feature strong{display:block;margin-bottom:4px;font-size:14px}
+  .feature span{color:var(--muted);font-size:13px;line-height:1.55}
+  .btn{min-height:44px;padding:10px 20px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-weight:600}
+  .btn-primary{color:#fff;background:var(--green);border-color:var(--green)}
+  .btn-primary:hover{background:var(--green-dark)}
+  .btn-ghost{color:var(--muted);background:transparent;border-color:transparent;padding:8px 12px;min-height:36px}
+  .btn:disabled{opacity:.55;cursor:not-allowed}
+  .row{margin-bottom:18px}
+  .row label{display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:#43566a}
+  .row input{width:100%;min-height:44px;padding:10px 12px;border:1px solid #cbd6e1;border-radius:8px;font-size:15px}
+  .hint{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.55}
+  .hint code{padding:1px 5px;background:#eef2f6;border-radius:4px}
+  .hint a{color:#176a9b}
+  .notice{margin:14px 0;padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.6;border:1px solid transparent}
+  .notice.green{color:var(--green-dark);background:var(--green-pale);border-color:#bfe3d1}
+  .notice.red{color:#8a2c36;background:var(--red-pale);border-color:#f0c3c8}
+  .notice:empty{display:none;margin:0;padding:0;border:none}
+  .checkbox-row{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:var(--green-pale);border:1px solid #bfe3d1;border-radius:8px;color:var(--green-dark);font-weight:600;cursor:pointer;margin-bottom:14px}
+  .checkbox-row input{width:18px;height:18px;margin-top:2px;accent-color:var(--green)}
+  .steps{display:flex;gap:8px;margin-bottom:22px;font-size:12px;color:var(--muted)}
+  .steps .step{flex:1;text-align:center;padding:8px 4px;border-bottom:2px solid var(--line)}
+  .steps .step.active{color:var(--navy);border-bottom-color:var(--navy);font-weight:600}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .actions .spacer{flex:1}
+  .hidden{display:none !important}
+  @media (max-width:560px){.card{padding:22px 18px;border-radius:10px}h2{font-size:20px}}
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="brand">
+    <svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="9" fill="#284766"/><path d="M13 11h14a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2V13a2 2 0 0 1 2-2Z" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 17h8M16 22h8M16 27h5" stroke="#9bd1aa" stroke-width="2" stroke-linecap="round"/></svg>
+    <h1>Issue Notes</h1>
+  </div>
+</header>
+<main>
+  <div class="card">
+    <section id="viewIntro">
+      <h2>把 GitHub Issues 变成你的个人笔记</h2>
+      <p class="lead">Issue Notes 是一个纯前端界面，把你的 GitHub 仓库 Issues 当作 Markdown 笔记来使用。无需安装、无需服务器，数据始终保存在你自己的仓库里。</p>
+      <ul class="features">
+        <li class="feature"><strong>Markdown 原生</strong><span>标题、列表、引用、代码块、表格、任务清单，GFM 格式完整支持。</span></li>
+        <li class="feature"><strong>实时预览</strong><span>边写边看效果，常用格式一键插入。</span></li>
+        <li class="feature"><strong>标签分类</strong><span>用 Issues 的 labels 给笔记打标签，按标签筛选。</span></li>
+        <li class="feature"><strong>全文搜索</strong><span>基于 GitHub 搜索，快速定位标题或正文中的关键词。</span></li>
+        <li class="feature"><strong>私有仓库支持</strong><span>通过 Fine-grained PAT 安全地读写你私有仓库里的笔记。</span></li>
+        <li class="feature"><strong>扩展语法</strong><span>Alert 提示框、脚注、数学公式、Mermaid 图表。</span></li>
+      </ul>
+      <div class="actions"><button class="btn btn-primary" id="btnStart">开始使用 →</button></div>
+    </section>
+
+    <section id="viewSetup" class="hidden">
+      <div class="steps"><div class="step active">1. 选择仓库</div><div class="step">2. 验证访问</div><div class="step">3. 进入笔记</div></div>
+      <h2>选择要使用的仓库</h2>
+      <p class="lead" style="font-size:13px">Issues 会作为笔记存储在该仓库中。建议专门建一个用于笔记的仓库。</p>
+      <div class="row"><label for="owner">GitHub 用户名 / 组织名</label><input type="text" id="owner" placeholder="例如 octocat" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+      <div class="row"><label for="repo">仓库名</label><input type="text" id="repo" placeholder="例如 my-notes" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+      <div class="notice" id="setupNotice"></div>
+      <div class="actions"><button class="btn btn-ghost" id="btnBackIntro">← 返回</button><div class="spacer"></div><button class="btn btn-primary" id="btnCheck">继续</button></div>
+    </section>
+
+    <section id="viewAuth" class="hidden">
+      <div class="steps"><div class="step active">1. 选择仓库</div><div class="step active">2. 验证访问</div><div class="step">3. 进入笔记</div></div>
+      <h2>配置访问权限</h2>
+      <p class="hint" id="authRepoLabel" style="margin-bottom:14px"></p>
+      <div class="notice green" id="publicNotice"></div>
+      <label class="checkbox-row hidden" id="writeOptionWrap" for="chkWrite"><input type="checkbox" id="chkWrite"><span>需要写入权限（创建、编辑、关闭笔记）</span></label>
+      <div class="notice green" id="privateNotice"></div>
+      <div class="row hidden" id="patWrap">
+        <label for="pat">Personal Access Token（Fine-grained PAT）</label>
+        <input type="password" id="pat" placeholder="github_pat_..." autocomplete="off" spellcheck="false">
+        <div class="hint">建议新建 Fine-grained PAT：仓库范围只勾选 <code id="patRepoHint">目标仓库</code>，权限只勾选 <code>Issues: Read and write</code>。<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">去创建 →</a></div>
+      </div>
+      <div class="notice" id="authNotice"></div>
+      <div class="actions"><button class="btn btn-ghost" id="btnBackSetup">← 返回</button><div class="spacer"></div><button class="btn btn-primary" id="btnConnect">连接并进入</button></div>
+    </section>
+  </div>
+</main>
+<script>
+(function () {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const API = 'https://api.github.com';
+  const state = { owner:'', repo:'', isPrivateHint:false };
+
+  function show(v){ ['viewIntro','viewSetup','viewAuth'].forEach(id=>$(id).classList.toggle('hidden', id!==v)); window.scrollTo({top:0,behavior:'smooth'}); }
+  function setNotice(el,text,type){ el.className='notice'+(type?' '+type:''); el.textContent=text||''; }
+  function explainHttp(s,b){ const m=b&&b.message?' - '+b.message:''; switch(s){ case 401:return 'Token 无效、过期或格式错误'+m; case 403:return '访问被拒绝：可能是速率限制或 token 权限不足'+m; case 404:return '资源不存在或无权访问'+m; case 429:return '请求过多，请稍后再试'+m; default:return 'HTTP '+s+m; } }
+
+  async function fetchRepo(owner,repo,token){
+    const headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+    if (token) headers['Authorization']='Bearer '+token;
+    let res;
+    try { res = await fetch(`${API}/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`,{headers}); }
+    catch(e){ const err=new Error('网络错误：'+e.message); err.network=true; throw err; }
+    let body=null; try{ body=await res.json(); }catch(_){}
+    if (!res.ok){ const err=new Error(explainHttp(res.status,body)); err.status=res.status; throw err; }
+    return body;
+  }
+
+  $('btnStart').onclick = ()=>{ show('viewSetup'); setTimeout(()=>$('owner').focus(),100); };
+  $('btnBackIntro').onclick = ()=> show('viewIntro');
+
+  $('btnCheck').onclick = async function () {
+    const owner=$('owner').value.trim(), repo=$('repo').value.trim();
+    setNotice($('setupNotice'),'','');
+    if (!owner||!repo){ setNotice($('setupNotice'),'请填写用户名和仓库名','red'); return; }
+    this.disabled=true; this.textContent='检测中…';
+    try {
+      await fetchRepo(owner,repo,'');
+      state.owner=owner; state.repo=repo; state.isPrivateHint=false;
+      enterAuthView(false);
+    } catch(err){
+      if (err.network){ setNotice($('setupNotice'),'无法连接 GitHub API，请检查网络：'+err.message,'red'); }
+      else if (err.status===404){ state.owner=owner; state.repo=repo; state.isPrivateHint=true; enterAuthView(true); }
+      else { setNotice($('setupNotice'),'检测失败：'+err.message,'red'); }
+    } finally { this.disabled=false; this.textContent='继续'; }
+  };
+
+  function enterAuthView(privateHint){
+    show('viewAuth');
+    $('authRepoLabel').textContent=`仓库：${state.owner}/${state.repo}`;
+    $('patRepoHint').textContent=state.repo;
+    $('chkWrite').checked=false;
+    $('pat').value='';
+    setNotice($('authNotice'),'','');
+    setNotice($('publicNotice'),'','');
+    setNotice($('privateNotice'),'','');
+    $('writeOptionWrap').classList.add('hidden');
+    $('patWrap').classList.add('hidden');
+    if (!privateHint){
+      setNotice($('publicNotice'),'检测到该仓库为公共仓库，请问是否需要写入权限？','green');
+      $('writeOptionWrap').classList.remove('hidden');
+    } else {
+      setNotice($('privateNotice'),'检测到该仓库为私有仓库，请输入 PAT','green');
+      $('patWrap').classList.remove('hidden');
+      setTimeout(()=>$('pat').focus(),100);
+    }
+  }
+
+  $('chkWrite').onchange = ()=>{
+    if ($('chkWrite').checked){ $('patWrap').classList.remove('hidden'); setTimeout(()=>$('pat').focus(),100); }
+    else $('patWrap').classList.add('hidden');
+  };
+  $('btnBackSetup').onclick = ()=> show('viewSetup');
+
+  $('btnConnect').onclick = async function () {
+    const isPublic = !state.isPrivateHint;
+    const needWrite = isPublic && $('chkWrite').checked;
+    const mustToken = !isPublic || needWrite;
+    const token = $('pat').value.trim();
+    setNotice($('authNotice'),'','');
+    if (mustToken && !token){ setNotice($('authNotice'),'请填写 PAT','red'); $('pat').focus(); return; }
+    this.disabled=true; this.textContent='验证中…';
+    try {
+      await fetchRepo(state.owner,state.repo,token||'');
+      sessionStorage.setItem('ghnote_cfg',JSON.stringify({owner:state.owner,repo:state.repo,token:token,readonly:!token,autoconnect:true}));
+      location.href='gitnote.html';
+    } catch(err){
+      if (err.network) setNotice($('authNotice'),'无法连接 GitHub API：'+err.message,'red');
+      else if (err.status===404) setNotice($('authNotice'),'该仓库无法连接。请检查与 GitHub 服务器的连接，或检查仓库是否存在，或确认该 PAT 是否拥有相应权限。','red');
+      else setNotice($('authNotice'),'连接失败：'+err.message,'red');
+    } finally { this.disabled=false; this.textContent='连接并进入'; }
+  };
+
+  $('repo').addEventListener('keydown',e=>{ if (e.key==='Enter') $('btnCheck').click(); });
+  $('pat').addEventListener('keydown',e=>{ if (e.key==='Enter') $('btnConnect').click(); });
+})();
+</script>
+</body>
+</html>
